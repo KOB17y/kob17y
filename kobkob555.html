@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <link rel="stylesheet" href="kobkob555.css">
+    <style>
+        body {
+            opacity: 0;
+            transform: scale(0.98) translateY(40px);
+            transition: opacity 1s cubic-bezier(.77,0,.18,1), transform 1s cubic-bezier(.77,0,.18,1);
+        }
+        body.loaded {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+        h1, p, nav.main-menu, table, .profile-box {
+            opacity: 0;
+            transform: translateY(40px) scale(0.96);
+            transition: opacity 0.8s cubic-bezier(.77,0,.18,1), transform 0.8s cubic-bezier(.77,0,.18,1);
+        }
+        body.loaded h1 {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            transition-delay: 0.2s;
+        }
+        body.loaded p {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            transition-delay: 0.4s;
+        }
+        body.loaded nav.main-menu {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            transition-delay: 0.6s;
+        }
+        body.loaded table {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            transition-delay: 0.8s;
+        }
+        body.loaded .profile-box {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            transition-delay: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="rgb-bar"></div>
+    <h1>Welcome to My Web Page</h1>
+    <p>This is a simple web page created as an example.</p>
+    <p>&copy; 2025 My Web Page</p>
+    <nav class="main-menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+    </nav>
+    <table>
+        <tr>
+            <th class="highlight-id">ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Position</th>
+        </tr>
+        <tr>
+            <td class="highlight-id">66202040034</td>
+            <td>Aphsisorn Wongseeda</td>
+            <td>17</td>
+            <td>Student</td>
+        </tr>
+    </table>
+    <div class="profile-box" id="profileBox">
+        <div class="profile-summary" id="profileSummary">
+            <div class="profile-avatar logo-kob">
+                <span>KOB</span>
+            </div>
+            <div class="profile-name">Mr. Apisorn Wongseeta <span class="profile-nickname">(Kob Kob)</span></div>
+            <div class="profile-role">Business Computer Student</div>
+            <div class="profile-school">Sakon Nakhon Technical College</div>
+            <div class="profile-email">oif3736@gmail.com</div>
+            <div class="profile-phone">+66 0621413826</div>
+            <div class="profile-intro">
+                <p>
+                    I am from <b>Sakon Nakhon</b>, born on <b>January 2, 2008</b> in the morning.<br>
+                    My name is <b>Kob</b>, my real name is <b>Mr. Apisorn Wongseeta</b>, 17 years old.<br>
+                    I study at <b>Sakon Nakhon Technical College</b>, currently studying in the <b>Business Computer</b> department.
+                </p>
+            </div>
+        </div>
+        <div class="profile-details" id="profileDetails">
+            <div class="profile-detail-row"><span class="profile-detail-label">Student ID:</span> 66202040034</div>
+            <div class="profile-detail-row"><span class="profile-detail-label">Age:</span> 17</div>
+            <div class="profile-detail-row"><span class="profile-detail-label">Status:</span> Student</div>
+            <div class="profile-detail-row"><span class="profile-detail-label">Nickname:</span> Kob Kob</div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 100);
+        });
+        document.getElementById('profileBox').addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
